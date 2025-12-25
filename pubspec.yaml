@@ -1,0 +1,85 @@
+name: hospirent
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+#version: 1.0.6+6
+version: 1.0.7+7
+
+environment:
+  sdk: ^3.8.1
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  provider: ^6.1.5
+  flutter_screenutil: ^5.9.3
+  carousel_slider: ^5.0.0
+  flutter_animate: ^4.5.2
+  cached_network_image: ^3.3.1
+  font_awesome_flutter: ^10.8.0
+  url_launcher: ^6.2.4
+  google_fonts: ^6.1.0
+  http: ^1.2.0
+  intl: ^0.20.2
+  icons_plus: ^5.0.0
+  lottie: ^3.3.1
+  shared_preferences: ^2.3.0
+  iconsax_flutter: ^1.0.0
+  shimmer: ^3.0.0
+  flutter_staggered_animations: ^1.1.1
+  package_info_plus: ^8.3.0
+  firebase_messaging: ^15.2.7
+  firebase_core: ^3.13.0
+  flutter_html: ^3.0.0
+  image_picker: ^1.1.2
+  fluttertoast: ^8.2.12
+  flutter_launcher_icons: ^0.14.4
+  webview_flutter: ^4.4.2
+  flutter_local_notifications: ^19.5.0
+  path_provider: ^2.1.5
+  add_to_cart_animation: ^2.0.4
+  new_version_plus: ^0.1.1
+
+
+
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.14.4"
+
+
+flutter_icons:
+    android: true
+    ios: true
+    image_path: "assets/playstore.png"
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/fonts/
+  fonts:
+          - family: PoppinsRegular
+            fonts:
+              - asset: assets/fonts/Poppins-Regular.ttf
+
+          - family: PoppinsSemiBold
+            fonts:
+               - asset: assets/fonts/Poppins-SemiBold.ttf
+          - family: PoppinsMedium
+            fonts:
+              - asset: assets/fonts/Poppins-Medium.ttf
+          - family: PoppinsBold
+            fonts:
+              - asset: assets/fonts/Poppins-Bold.ttf
+
+

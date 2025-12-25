@@ -1,0 +1,46 @@
+# Flutter & Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+pubspec.lock
+
+# Build outputs
+build/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+android/app/debug
+android/app/profile
+android/app/release
+# Add these lines to your .gitignore file
+android/key.properties
+android/app/*.jks
+
+# Gradle cache & build
+.gradle/
+android/.gradle/
+**/build/
+
+# IntelliJ / VSCode / Android Studio
+.idea/
+.vscode/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Firebase generated
+google-services.json
+GoogleService-Info.plist
+
+# Generated plugin registrant
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Misc
+*.swp
+*.swo

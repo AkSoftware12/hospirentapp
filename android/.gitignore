@@ -1,0 +1,41 @@
+# Flutter & Dart
+.dart_tool/
+.packages
+.pub/
+build/
+flutter_*.png
+
+# Gradle
+android/.gradle/
+android/build/
+android/local.properties
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+ios/build/
+ios/Runner.xcworkspace/
+ios/GeneratedPluginRegistrant.*
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcworkspace
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Pods/
+macos/build/
+
+# VS Code
+.vscode/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# Others
+*.log
+pubspec.lock
