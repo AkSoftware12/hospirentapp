@@ -876,16 +876,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 100.sp,
-                      height: 100.sp,
-                      padding: EdgeInsets.all(0.sp),
-                      // decoration: BoxDecoration(
-                      //   color: Colors.white30,
-                      //   shape: BoxShape.circle,
-                      // ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
                       child: CachedNetworkImage(
                         imageUrl: categories[index]['image_url'],
+                        height: 100.sp,
+                        width: 100.sp,
+                        fit: BoxFit.cover,
                         placeholder: (context, url) => Center(
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
