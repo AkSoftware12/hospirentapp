@@ -104,7 +104,7 @@ class RentProductCard extends StatelessWidget {
                                       color: Colors.blue,
                                     ),
                                     TextBuilder(
-                                      text: product.price?.round().toString() ?? '0',
+                                      text: product.rentPrice?.round().toString() ?? '0',
                                       fontWeight: FontWeight.bold,
                                       fontSize: 13.sp,
                                       color: Colors.blue,
@@ -381,15 +381,15 @@ class RentProductCard extends StatelessWidget {
                                 product_id: product.id.toString(),
                                 measurement: product.measurement.toString(),
                                 product_name: product.title!,
-                                rate: product.price!,
+                                rate: product.rentPrice!,
                                 image: product.photoUrl!,
                                 category: '',
                                 quantity: 1,
                                 // Calculate GST amount: (price * gst percentage) / 100
-                                gst: (product.price! * product.gst!) / 100,
+                                gst: (product.rentPrice! * product.gst!) / 100,
                                 product_gst: product.gst!?? 0,
                                 // Total price including GST: price + GST amount
-                                totalPrice: product.price! + ((product.price! * product.gst!) / 100),
+                                totalPrice: product.rentPrice! + ((product.rentPrice! * product.gst!) / 100),
                               );
                               cart.addItem(cartModel);
                             }

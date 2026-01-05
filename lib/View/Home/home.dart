@@ -833,6 +833,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildCategoryItem(int index) {
+    final Color c = (categories[index]['color'] as Color?) ?? Colors.white;
+
     return InkWell(
       onTap: () {
         showDialog(
@@ -849,65 +851,61 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         );
       },
-      borderRadius: BorderRadius.circular(12.r),
+      // borderRadius: BorderRadius.circular(12.r),
       child: Column(
         children: [
           Card(
-            elevation: 2,
+            elevation: 1,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(20),
+                side: BorderSide(color: Colors.grey.shade200,width: 1)
+
+
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                // color: HexColor('#c3d0db'),
-                color: HexColor('#E1E7ED'),
-                borderRadius: BorderRadius.circular(12.r),
-                // gradient: LinearGradient(
-                //   colors: [
-                //     categories1[index]['color'].withOpacity(0.1),
-                //     Colors.white,
-                //   ],
-                //   begin: Alignment.topLeft,
-                //   end: Alignment.bottomRight,
-                // ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(2.sp),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: CachedNetworkImage(
-                        imageUrl: categories[index]['image_url'],
-                        height: 100.sp,
-                        width: 100.sp,
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) => Center(
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            // valueColor:
-                            // AlwaysStoppedAnimation(categories1[index]['color']),
-                          ),
-                        ),
-                        errorWidget: (context, url, error) => Icon(
-                          Icons.error_outline,
-                          color: categories[index]['color'],
-                        ),
+            color: Colors.white,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  CachedNetworkImage(
+                    imageUrl: (categories[index]['image_url'] ?? "").toString(),
+                    height: 110.sp,
+                    width: 110.sp,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => Container(
+                      color: Colors.black12,
+                      child: const Center(
+                        child: CircularProgressIndicator(strokeWidth: 2),
                       ),
                     ),
+                    errorWidget: (context, url, error) => Container(
+                      color: Colors.black12,
+                      child: Icon(
+                        Icons.broken_image_rounded,
+                        size: 40,
+                        color: c,
+                      ),
+                    ),
+                  ),
 
-                  ],
-                ),
+
+                ],
               ),
             ),
-          ).animate().scaleXY(
-            begin: 0.8,
-            end: 1,
-            duration: 500.ms,
-            delay: (100 * index).ms,
+          )
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .scale(
+            begin: const Offset(0.85, 0.85),
+            end: const Offset(1, 1),
             curve: Curves.easeOutBack,
+          )
+              .slideY(
+            begin: 0.15,
+            end: 0,
+            delay: (120 * index).ms,
           ),
+
 
           Expanded(
             child: Center(
@@ -1034,14 +1032,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(0.r),
-            // gradient: LinearGradient(
-            //   colors: [
-            //     bottomService[index]['color'],
-            //   Colors.white,
-            //   ],
-            //   begin: Alignment.topCenter,
-            //   end: Alignment.bottomCenter,
-            // ),
           ),
           child: Padding(
             padding: EdgeInsets.all(5.sp),
@@ -1186,6 +1176,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget _buildServiceItem(int index) {
+    final Color c = (categories[index]['color'] as Color?) ?? Colors.white;
+
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -1200,65 +1192,61 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
-      borderRadius: BorderRadius.circular(12.r),
+      // borderRadius: BorderRadius.circular(20.r),
       child: Column(
         children: [
           Card(
-            elevation: 2,
+            // elevation: 1,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(20),
+                side: BorderSide(color: Colors.grey.shade200,width: 1)
+
+
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                color: HexColor('#c3d0db'),
-                borderRadius: BorderRadius.circular(12.r),
-                // gradient: LinearGradient(
-                //   colors: [
-                //     categories1[index]['color'].withOpacity(0.1),
-                //     Colors.white,
-                //   ],
-                //   begin: Alignment.topLeft,
-                //   end: Alignment.bottomRight,
-                // ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(2.sp),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 100.sp,
-                      height: 100.sp,
-                      padding: EdgeInsets.all(2.sp),
-                      // decoration: BoxDecoration(
-                      //   color: Colors.white30,
-                      //   shape: BoxShape.circle,
-                      // ),
-                      child: CachedNetworkImage(
-                        imageUrl: services[index]['icon_url'],
-                        placeholder: (context, url) => Center(
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                          ),
-                        ),
-                        errorWidget: (context, url, error) => Icon(
-                          Icons.error_outline,
-                          color: categories[index]['color'],
-                        ),
+
+            color: Colors.white,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  CachedNetworkImage(
+                    imageUrl: (services[index]['icon_url'] ?? "").toString(),
+                    height: 110.sp,
+                    width: 110.sp,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => Container(
+                      color: Colors.black12,
+                      child: const Center(
+                        child: CircularProgressIndicator(strokeWidth: 2),
                       ),
                     ),
+                    errorWidget: (context, url, error) => Container(
+                      color: Colors.black12,
+                      child: Icon(
+                        Icons.broken_image_rounded,
+                        size: 40,
+                        color: c,
+                      ),
+                    ),
+                  ),
 
-                  ],
-                ),
+                ],
               ),
             ),
-          ).animate().scaleXY(
-            begin: 0.8,
-            end: 1,
-            duration: 500.ms,
-            delay: (100 * index).ms,
+          )
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .scale(
+            begin: const Offset(0.85, 0.85),
+            end: const Offset(1, 1),
             curve: Curves.easeOutBack,
+          )
+              .slideY(
+            begin: 0.15,
+            end: 0,
+            delay: (120 * index).ms,
           ),
+
 
           Expanded(
             child: Center(

@@ -178,7 +178,7 @@ class RentCartProvider with ChangeNotifier {
   int totalPrice() {
     double totalPrice = 0;
     for (int i = 0; i < _itemsRent.length; i++) {
-      totalPrice += _itemsRent[i].totalPrice!;
+      totalPrice += ((_itemsRent[i].rate! + _itemsRent[i].gst!) * _itemsRent[i].quantity!).round();
     }
     if (kDebugMode) {
       print('Total Price: $totalPrice');
